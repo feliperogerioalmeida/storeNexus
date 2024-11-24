@@ -21,6 +21,14 @@ export default async function Home() {
       }
     }
   })
+
+  const mouses = await db.product.findMany({
+    where: {
+      category:{
+        slug : "mouses"
+      }
+    }
+  })
  
   return (
     <div className="flex flex-col gap-8">
@@ -56,7 +64,12 @@ export default async function Home() {
         src= "/banner-home-03.png"
         alt="Até 55% de desconto em fones!"
       />
-    
+
+      <div>
+        <SectionTitle> mouses </SectionTitle>
+
+        <ProductList products={mouses}/>
+      </div>
 
     </div>
   );
