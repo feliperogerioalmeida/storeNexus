@@ -50,14 +50,14 @@ const ProductInfo = ({product: {basePrice, totalPrice, description, discountPerc
             )}
 
             <div className="flex items-center gap-2 mt-4">
-                <Button size={16} variant="outline" onClick={handleDecreaseQuantityClick}>
-                    <ArrowLeftIcon/>
+                <Button size="icon" variant="outline" onClick={handleDecreaseQuantityClick}>
+                    <ArrowLeftIcon size={16}/>
                 </Button>
 
                 <span> {quantity} </span>
                 
-                <Button size={16} variant="outline" onClick={handleIncreaseQuantityClick}>
-                    <ArrowRightIcon/>
+                <Button size="icon" variant="outline" onClick={handleIncreaseQuantityClick}>
+                    <ArrowRightIcon size={16}/>
                 </Button>
 
             </div>
