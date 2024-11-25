@@ -2,7 +2,7 @@ import { Badge } from "@/app/_components/ui/badge";
 import ProductItem from "@/app/_components/ui/product-item";
 import { db } from "@/app/_lib/prisma";
 import { CATEGORY_ICON } from "@/app/constants/category-icon";
-import { computeProductTotalPrice } from "@/app/product";
+import { computeProductTotalPrice } from "@/app/helpers/product";
 
 
 const CategoryProducts = async ({params}: any) => {
