@@ -1,6 +1,6 @@
 import Categories from "./components/categories";
 import { db } from "../_lib/prisma";
-import ProductList from "./components/product-list";
+import ProductList from "../_components/ui/product-list";
 import SectionTitle from "./components/section-title";
 import PromoBanner from "./components/promo-banner";
 
