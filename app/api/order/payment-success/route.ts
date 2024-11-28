@@ -29,7 +29,8 @@ export const POST = async (request: Request) => {
                 expand:['line_items']
             }
         );
-
+        
+        // eslint-disable-next-line no-unused-vars
         const lineItems = sessionWithLineItems.line_items
 
         //TO DO: CRIAR PEDIDO

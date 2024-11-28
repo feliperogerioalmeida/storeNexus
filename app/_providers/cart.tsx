@@ -15,9 +15,13 @@ interface ICartContext {
     total: number;
     subtotal: number;
     totalDiscount: number;
+    // eslint-disable-next-line no-unused-vars
     addProductToCart: (product: CartProduct) => void;
+    // eslint-disable-next-line no-unused-vars
     decreaseProductQuantity: (productId: string) => void;
+    // eslint-disable-next-line no-unused-vars
     increaseProductQuantity: (productId: string) => void;
+    // eslint-disable-next-line no-unused-vars
     removeProductFromCart: (productId: string) => void;
 }
 
