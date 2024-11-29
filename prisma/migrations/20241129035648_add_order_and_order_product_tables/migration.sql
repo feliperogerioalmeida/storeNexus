@@ -1,15 +1,13 @@
 -- CreateEnum
 CREATE TYPE "OrderStatus" AS ENUM ('WAITING_FOR_PAYMENT', 'PAYMENT_CONFIRMED');
 
--- AlterTable
-ALTER TABLE "Product" ADD COLUMN     "status" "OrderStatus" NOT NULL DEFAULT 'WAITING_FOR_PAYMENT';
-
 -- CreateTable
 CREATE TABLE "Order" (
     "id" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAr" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "status" "OrderStatus" NOT NULL DEFAULT 'WAITING_FOR_PAYMENT',
 
     CONSTRAINT "Order_pkey" PRIMARY KEY ("id")
 );

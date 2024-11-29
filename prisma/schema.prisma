@@ -26,7 +26,6 @@ model Product {
   category           Category       @relation(fields: [categoryId], references: [id])
   discountPercentage Int            @default(0)
   OrderProduct       OrderProduct[]
-  status OrderStatus @default(WAITING_FOR_PAYMENT)
 }
 
 enum OrderStatus {
@@ -41,6 +40,7 @@ model Order {
   orderProducts OrderProduct[]
   createdAt     DateTime       @default(now())
   updatedAr     DateTime       @default(now()) @updatedAt
+  status OrderStatus @default(WAITING_FOR_PAYMENT)
 }
 
 model OrderProduct {
