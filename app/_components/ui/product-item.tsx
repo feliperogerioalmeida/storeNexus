@@ -2,25 +2,27 @@ import { ProductWithTotalPrice } from "@/app/helpers/product";
 import Image from "next/image"
 import Link from "next/link";
 import DiscountBadge from "./discount-badge";
+import { cn } from "@/app/_lib/utils";
 
 interface ProductItemProps {
-    product: ProductWithTotalPrice
+    product: ProductWithTotalPrice,
+    className?: string
 }
 
-const ProductItem = ({product}: ProductItemProps) => {
+const ProductItem = ({product, className}: ProductItemProps) => {
     return ( 
-        <Link href={`/product/${product.slug}`}>
-            <div className="flex flex-col gap-4">
-                <div className=" relative bg-accent rounded-lg h-[170px] w-full flex items-center justify-center">
+        <Link href={`/product/${product.slug}`}
+        className={cn("flex min-w-[156px] flex-col gap-4", className)}
+        >
+
+            
+            <div className="relative flex aspect-square w-full items-center justify-center rounded-lg bg-accent">
                     <Image
                         src={product.imageUrls[0]}
                         height={0}
                         width={0}
                         sizes="100vw"
-                        className="h-auto w-auto max-w-[80%] max-h-[70%]"
-                        style={{
-                            objectFit: "contain"
-                        } }
+                        className="h-auto w-auto max-w-[80%] max-h-[70%] object-contain"
                         alt={product.name}
                     />
 
@@ -50,7 +52,6 @@ const ProductItem = ({product}: ProductItemProps) => {
                     </div>    
 
                 </div>
-            </div>
         </Link>
 
 
