@@ -1,6 +1,5 @@
 "use server"
 
-import { OrderProduct, User } from "@prisma/client";
 import { db } from "../_lib/prisma";
 import { CartProduct } from "../_providers/cart";
 
