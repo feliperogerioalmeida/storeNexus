@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/app/_components/ui/accordion";
 import { Card } from "@/app/_components/ui/card";
-import { Order, Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import {format} from "date-fns"
 import OrderProductItem from "./order-product-item";
 import { Separator } from "@/app/_components/ui/separator";
