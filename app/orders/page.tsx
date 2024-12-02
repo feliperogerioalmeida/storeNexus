@@ -12,13 +12,16 @@ async function OrderPage() {
     if (!user){
         return <p>Acess Denied</p>
     }
-
     const orders = await db.order.findMany({
         where:{
             userId: (user as any).id,
         },
         include:{
-            orderProducts: true
+            orderProducts:{
+                include:{
+                    product:true
+                }
+            }
         }
     })
 
