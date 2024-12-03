@@ -62,10 +62,20 @@ export default async function Home() {
           <ProductList products={deals}/>
         </div>
 
-        <PromoBanner
-          src= "/banner-home-02.png"
-          alt="Até 55% de desconto em mouses!"
-        />
+        <div className="flex flex-col lg:flex-row">
+          <PromoBanner
+            src= "/banner-home-02.png"
+            alt="Até 55% de desconto em mouses!"
+            className="w-0 flex-1"
+          />
+
+          <PromoBanner
+            src= "/banner-home-03.png"
+            alt="Até 55% de desconto em fones!"
+            className="hidden w-0 flex-1 lg:block"
+          />
+        </div>
+        
 
         <div className="flex flex-col gap-3 lg:gap-5">
           <SectionTitle className="pl-5"> teclados </SectionTitle>
@@ -76,6 +86,7 @@ export default async function Home() {
           <PromoBanner
             src= "/banner-home-03.png"
             alt="Até 55% de desconto em fones!"
+            className="lg:hidden"
           />
         </div>
       
