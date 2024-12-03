@@ -16,7 +16,7 @@ const ProductItem = ({product, className}: ProductItemProps) => {
         >
 
             
-            <div className="relative flex aspect-square w-full items-center justify-center rounded-lg bg-accent">
+            <div className="relative flex w-full items-center justify-center rounded-lg bg-accent lg:h-[200px]">
                     <Image
                         src={product.imageUrls[0]}
                         height={0}
