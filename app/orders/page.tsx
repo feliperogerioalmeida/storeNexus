@@ -35,7 +35,7 @@ async function OrderPage() {
 
     return (   
         <div className="p-5">
-            <Badge className="w-fit gap-1 text-base uppercase border-primary px-3 py-[0.375rem] border-2" variant="outline">
+            <Badge variant="heading">
                 <PackageSearchIcon size={16}/>
                 Meus Pedidos
             </Badge>
