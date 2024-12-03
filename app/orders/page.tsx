@@ -9,14 +9,14 @@ export const dynamic = "force-dynamic"
 
 async function OrderPage() {
     
-    const user = getServerSession(authOptions)
+    const session = await getServerSession(authOptions)
     
-    if (!user){
+    if (!session || !session.user) {
         return <p>Acess Denied</p>
     }
     const orders = await db.order.findMany({
         where:{
-            userId: (user as any).id,
+            userId: session.user.id,
         },
         include:{
             orderProducts:{
