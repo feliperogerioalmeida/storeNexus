@@ -1,6 +1,6 @@
 import { ShapesIcon } from "lucide-react";
-import { Badge } from "../_components/ui/badge";
-import { db } from "../_lib/prisma";
+import { Badge } from "../../_components/ui/badge";
+import { db } from "../../_lib/prisma";
 import CategoryItem from "./components/category-item";
 
 const CatalogPage = async () => {

@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../_lib/auth";
+import { authOptions } from "../../_lib/auth";
 import { PackageSearchIcon } from "lucide-react";
-import { Badge } from "../_components/ui/badge";
-import { db } from "../_lib/prisma";
+import { Badge } from "../../_components/ui/badge";
+import { db } from "../../_lib/prisma";
 import OrderItem from "./components/order-item";
 
 export const dynamic = "force-dynamic"
