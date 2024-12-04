@@ -7,10 +7,10 @@ import { computeProductTotalPrice } from "@/app/helpers/product";
 import { Separator } from "./separator";
 import { ScrollArea } from "./scroll-area";
 import { Button } from "./button";
-import { createCheckout } from "@/app/actions/checkout";
 import { loadStripe} from "@stripe/stripe-js"
-import { createOrder } from "@/app/actions/order";
 import { useSession } from "next-auth/react";
+import { createOrder } from "@/app/actions/order";
+import { createCheckout } from "@/app/actions/checkout";
 
 const Cart = () => {
     const {data} = useSession()
