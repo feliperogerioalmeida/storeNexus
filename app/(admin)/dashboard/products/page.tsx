@@ -1,13 +1,11 @@
-interface ProductsPageProps{
-    params:{
-        id: string
-    }
-}
+import { db } from "@/app/_lib/prisma";
 
-const ProductsPage = ({params} : ProductsPageProps) => {
-    console.log(params)
+const ProductsPage = async () => {
+    
+    const products = await db.product.findMany()
+    console.log(products)
     return ( 
-
+        
         <h1>Products</h1>
      );
 }
