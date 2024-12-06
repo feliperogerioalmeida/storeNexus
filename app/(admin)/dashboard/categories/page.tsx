@@ -2,6 +2,7 @@ import { Badge } from "@/app/_components/ui/badge";
 import { Button } from "@/app/_components/ui/button";
 import { db } from "@/app/_lib/prisma";
 import { ListOrderedIcon, PlusIcon } from "lucide-react";
+import CategoriesTable from "./components/categories-table";
 
 const CategoriesPage = async () => {
     
@@ -31,7 +32,7 @@ const CategoriesPage = async () => {
                 </Button>
             </div>
 
-
+            <CategoriesTable categories={categories}/>
         </div>
      );
 }
