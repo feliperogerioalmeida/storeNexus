@@ -29,7 +29,15 @@ const CategoryProducts = async ({params}: any) => {
             </Badge>
 
             <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
-                {category.products.map(product => <ProductItem key={product.id} product = {computeProductTotalPrice(product)}/>)}
+                {category.products.map(product => 
+                    <ProductItem 
+                        key={product.id} 
+                        product = {{
+                                ...product, 
+                                totalPrice:computeProductTotalPrice(product)
+                        }}
+                    />
+                )}
             </div>
 
         </div>
