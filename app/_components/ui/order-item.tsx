@@ -2,11 +2,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card } from "@/app/_components/ui/card";
 import { Prisma } from "@prisma/client";
 import {format} from "date-fns"
-import OrderProductItem from "./order-product-item";
 import { Separator } from "@/app/_components/ui/separator";
 import { useMemo } from "react";
 import { computeProductTotalPrice } from "@/app/helpers/product";
-import { getOrderStatus } from "../helpers/status";
+import { getOrderStatus } from "../../(shop)/orders/helpers/status";
+import OrderProductItem from "./order-product-item";
 
 interface OrderItemProps{
     order: Prisma.OrderGetPayload<{

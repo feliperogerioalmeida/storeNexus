@@ -3,7 +3,7 @@ import { authOptions } from "../../_lib/auth";
 import { PackageSearchIcon } from "lucide-react";
 import { Badge } from "../../_components/ui/badge";
 import { db } from "../../_lib/prisma";
-import OrderItem from "./components/order-item";
+import OrderItem from "../../_components/ui/order-item";
 
 export const dynamic = "force-dynamic"
 
