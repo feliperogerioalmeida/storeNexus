@@ -29,11 +29,13 @@ const Sidebar = () => {
                     </Button>
                 </Link>
                 
-                <Button variant="outline" className="justify-start w-full flex gap-2">
-                    <ListOrderedIcon size={16} />
-                    Categorias
-                </Button>
-                
+                <Link href='/dashboard/categories'>
+                    <Button variant="outline" className={`justify-start w-full flex gap-2 ${path.includes('/categories') && 'bg-primary text-white hover:bg-primary'}}`}>
+                        <ListOrderedIcon size={16} />
+                        Categorias
+                    </Button>
+                    
+                </Link>
                 <Button variant="outline" className="justify-start w-full flex gap-2">
                     <PackageSearchIcon size={16}/>
                     Pedidos
