@@ -18,9 +18,9 @@ const wishlist = async () => {
   }
   return (
     <div className="p-5 lg:container lg:mx-auto lg:py-10">
-      <Badge variant="outline">
+      <Badge variant="heading">
         <Heart size={16} />
-        Meus Pedidos
+        Favoritos
       </Badge>
     </div>
   );
