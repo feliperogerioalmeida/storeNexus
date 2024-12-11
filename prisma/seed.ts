@@ -1,7 +1,6 @@
+const { PrismaClient } = require("@prisma/client")
 
-const { PrismaClient } = require("@prisma/client");
-
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
   try {
@@ -12,7 +11,7 @@ async function main() {
         imageUrl:
           "https://utfs.io/f/857ace02-31c2-43ae-a6f3-7d97b0cb279a-e7tkok.png",
       },
-    });
+    })
 
     const mouses = [
       {
@@ -90,11 +89,11 @@ async function main() {
         categoryId: mousesCategory.id,
         discountPercentage: 0,
       },
-    ];
+    ]
 
     await prisma.product.createMany({
       data: mouses,
-    });
+    })
 
     const keyboardsCategory = await prisma.category.create({
       data: {
@@ -103,7 +102,7 @@ async function main() {
         imageUrl:
           "https://utfs.io/f/f9f5bf3e-ebdd-49ea-b983-92f930f9afab-7zu99x.png",
       },
-    });
+    })
 
     const keyboards = [
       {
@@ -196,11 +195,11 @@ async function main() {
         categoryId: keyboardsCategory.id,
         discountPercentage: 25, // 10% discount
       },
-    ];
+    ]
 
     await prisma.product.createMany({
       data: keyboards,
-    });
+    })
 
     const headphonesCategory = await prisma.category.create({
       data: {
@@ -209,7 +208,7 @@ async function main() {
         imageUrl:
           "https://utfs.io/f/42bb73b3-4a24-4542-aee4-12fa68014dc3-e7tkon.png",
       },
-    });
+    })
 
     const headphones = [
       {
@@ -302,11 +301,11 @@ async function main() {
         categoryId: headphonesCategory.id,
         discountPercentage: 0, // 10% discount
       },
-    ];
+    ]
 
     await prisma.product.createMany({
       data: headphones,
-    });
+    })
 
     const mousepadsCategory = await prisma.category.create({
       data: {
@@ -315,7 +314,7 @@ async function main() {
         imageUrl:
           "https://utfs.io/f/5f889f93-7446-4da7-bc6b-4926c85997f9-e7tkom.png",
       },
-    });
+    })
 
     const mousepads = [
       {
@@ -408,11 +407,11 @@ async function main() {
         categoryId: mousepadsCategory.id,
         discountPercentage: 5, // 10% discount
       },
-    ];
+    ]
 
     await prisma.product.createMany({
       data: mousepads,
-    });
+    })
 
     const monitorsCategory = await prisma.category.create({
       data: {
@@ -421,7 +420,7 @@ async function main() {
         imageUrl:
           "https://utfs.io/f/7cbf0652-7cdc-468f-9d83-f80a9b0c2c73-11uae7.png",
       },
-    });
+    })
 
     const monitors = [
       {
@@ -514,11 +513,11 @@ async function main() {
         categoryId: monitorsCategory.id,
         discountPercentage: 10, // 10% discount
       },
-    ];
+    ]
 
     await prisma.product.createMany({
       data: monitors,
-    });
+    })
 
     const speakersCategory = await prisma.category.create({
       data: {
@@ -527,7 +526,7 @@ async function main() {
         imageUrl:
           "https://utfs.io/f/b73c526a-9e78-444e-8822-7cda6e857b9f-e7tkoj.png",
       },
-    });
+    })
 
     const speakers = [
       {
@@ -620,26 +619,26 @@ async function main() {
         categoryId: speakersCategory.id,
         discountPercentage: 0, // 10% discount
       },
-    ];
+    ]
 
     await prisma.product.createMany({
       data: speakers,
-    });
+    })
 
-    console.log("Seed completed successfully");
+    console.log("Seed completed successfully")
   } catch (error) {
-    console.error("Error seeding database:", error);
+    console.error("Error seeding database:", error)
   } finally {
-    await prisma.$disconnect();
+    await prisma.$disconnect()
   }
 }
 
 main()
   .then(async () => {
-    await prisma.$disconnect();
+    await prisma.$disconnect()
   })
   .catch(async (e) => {
-    console.error(e);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })

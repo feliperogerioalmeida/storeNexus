@@ -1,4 +1,4 @@
-import { Skeleton } from "./skeleton";
+import { Skeleton } from "./skeleton"
 
 const LoadingPage = () => {
   return (
@@ -7,6 +7,6 @@ const LoadingPage = () => {
         <Skeleton className="h-6 w-[100%] rounded-md bg-gray-300" />
       </div>
     </div>
-  );
-};
-export default LoadingPage;
+  )
+}
+export default LoadingPage
