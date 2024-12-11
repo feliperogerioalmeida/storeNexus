@@ -47,7 +47,7 @@ export default async function Home() {
           <PromoBanner
             src="/banner-home-01.png"
             alt="Até 55% de desconto esse mês!"
-            className="lg:hidden"
+            className="px-5 lg:hidden"
           />
         </Link>
       </div>
