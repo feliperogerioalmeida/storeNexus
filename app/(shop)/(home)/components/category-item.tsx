@@ -1,10 +1,10 @@
-import { Badge } from "@/app/_components/ui/badge"
-import { CATEGORY_ICON } from "@/app/constants/category-icon"
-import { Category } from "@prisma/client"
-import Link from "next/link"
+import { Badge } from "@/app/_components/ui/badge";
+import { CATEGORY_ICON } from "@/app/constants/category-icon";
+import { Category } from "@prisma/client";
+import Link from "next/link";
 
 interface CategoryItemProps {
-  category: Category
+  category: Category;
 }
 
 const CategoryItem = ({ category }: CategoryItemProps) => {
@@ -18,7 +18,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
         <span className="text-xs font-bold">{category.name}</span>
       </Badge>
     </Link>
-  )
-}
+  );
+};
 
-export default CategoryItem
+export default CategoryItem;

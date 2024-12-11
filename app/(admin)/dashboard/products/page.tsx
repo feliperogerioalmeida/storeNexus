@@ -1,11 +1,11 @@
-import { Badge } from "@/app/_components/ui/badge"
-import { Button } from "@/app/_components/ui/button"
-import { db } from "@/app/_lib/prisma"
-import { PackageIcon, PlusIcon } from "lucide-react"
+import { Badge } from "@/app/_components/ui/badge";
+import { Button } from "@/app/_components/ui/button";
+import { db } from "@/app/_lib/prisma";
+import { PackageIcon, PlusIcon } from "lucide-react";
 import ProductsTable, {
   ProductWithTotalPriceAndCategory,
-} from "./components/products-table"
-import { computeProductTotalPrice } from "@/app/helpers/product"
+} from "./components/products-table";
+import { computeProductTotalPrice } from "@/app/helpers/product";
 
 const ProductsPage = async () => {
   const products = await db.product.findMany({
@@ -16,13 +16,13 @@ const ProductsPage = async () => {
         },
       },
     },
-  })
+  });
 
   const productWithTotalPrice: ProductWithTotalPriceAndCategory[] =
     products.map((product) => ({
       ...product,
       totalPrice: computeProductTotalPrice(product),
-    }))
+    }));
 
   return (
     <div className="flex w-full flex-col gap-10 p-10">
@@ -43,7 +43,7 @@ const ProductsPage = async () => {
 
       <ProductsTable products={productWithTotalPrice} />
     </div>
-  )
-}
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;

@@ -20,7 +20,7 @@ const wishlist = async () => {
     <div className="p-5 lg:container lg:mx-auto lg:py-10">
       <Badge variant="outline">
         <Heart size={16} />
-          Meus Pedidos
+        Meus Pedidos
       </Badge>
     </div>
   );

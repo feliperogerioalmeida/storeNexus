@@ -5,17 +5,17 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/app/_components/ui/table"
-import { ProductWithTotalPrice } from "@/app/helpers/product"
+} from "@/app/_components/ui/table";
+import { ProductWithTotalPrice } from "@/app/helpers/product";
 
 export type ProductWithTotalPriceAndCategory = ProductWithTotalPrice & {
   category: {
-    name: string
-  }
-}
+    name: string;
+  };
+};
 
 interface ProductTableProps {
-  products: ProductWithTotalPriceAndCategory[]
+  products: ProductWithTotalPriceAndCategory[];
 }
 
 const ProductsTable = ({ products }: ProductTableProps) => {
@@ -42,7 +42,7 @@ const ProductsTable = ({ products }: ProductTableProps) => {
         ))}
       </TableBody>
     </Table>
-  )
-}
+  );
+};
 
-export default ProductsTable
+export default ProductsTable;

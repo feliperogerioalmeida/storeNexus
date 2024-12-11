@@ -5,19 +5,19 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/app/_components/ui/table"
-import { Prisma } from "@prisma/client"
+} from "@/app/_components/ui/table";
+import { Prisma } from "@prisma/client";
 
 interface CategoriesTableProps {
   categories: Prisma.CategoryGetPayload<{
     include: {
       products: {
         select: {
-          id: true
-        }
-      }
-    }
-  }>[]
+          id: true;
+        };
+      };
+    };
+  }>[];
 }
 
 const CategoriesTable = ({ categories }: CategoriesTableProps) => {
@@ -40,7 +40,7 @@ const CategoriesTable = ({ categories }: CategoriesTableProps) => {
         ))}
       </TableBody>
     </Table>
-  )
-}
+  );
+};
 
-export default CategoriesTable
+export default CategoriesTable;

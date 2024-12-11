@@ -1,12 +1,12 @@
-import { ProductWithTotalPrice } from "@/app/helpers/product"
-import Image from "next/image"
-import Link from "next/link"
-import DiscountBadge from "./discount-badge"
-import { cn } from "@/app/_lib/utils"
+import { ProductWithTotalPrice } from "@/app/helpers/product";
+import Image from "next/image";
+import Link from "next/link";
+import DiscountBadge from "./discount-badge";
+import { cn } from "@/app/_lib/utils";
 
 interface ProductItemProps {
-  product: ProductWithTotalPrice
-  className?: string
+  product: ProductWithTotalPrice;
+  className?: string;
 }
 
 const ProductItem = ({ product, className }: ProductItemProps) => {
@@ -54,7 +54,7 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default ProductItem
+export default ProductItem;

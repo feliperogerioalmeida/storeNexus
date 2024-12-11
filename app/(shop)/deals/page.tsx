@@ -1,8 +1,8 @@
-import { PercentIcon } from "lucide-react"
-import ProductItem from "../../_components/ui/product-item"
-import { db } from "../../_lib/prisma"
-import { computeProductTotalPrice } from "../../helpers/product"
-import { Badge } from "../../_components/ui/badge"
+import { PercentIcon } from "lucide-react";
+import ProductItem from "../../_components/ui/product-item";
+import { db } from "../../_lib/prisma";
+import { computeProductTotalPrice } from "../../helpers/product";
+import { Badge } from "../../_components/ui/badge";
 
 const DealsPage = async () => {
   const deals = await db.product.findMany({
@@ -11,7 +11,7 @@ const DealsPage = async () => {
         gt: 0,
       },
     },
-  })
+  });
 
   return (
     <div className="flex flex-col gap-8 p-5">
@@ -32,7 +32,7 @@ const DealsPage = async () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DealsPage
+export default DealsPage;

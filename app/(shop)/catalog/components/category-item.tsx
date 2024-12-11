@@ -1,9 +1,9 @@
-import { Category } from "@prisma/client"
-import Image from "next/image"
-import Link from "next/link"
+import { Category } from "@prisma/client";
+import Image from "next/image";
+import Link from "next/link";
 
 interface CategoryItemProps {
-  category: Category
+  category: Category;
 }
 
 const CategoryItem = ({ category }: CategoryItemProps) => {
@@ -29,6 +29,6 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
         </div>
       </div>
     </Link>
-  )
-}
-export default CategoryItem
+  );
+};
+export default CategoryItem;

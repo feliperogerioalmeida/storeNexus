@@ -1,31 +1,31 @@
-"use client"
+"use client";
 
-import { Button } from "@/app/_components/ui/button"
-import DiscountBadge from "@/app/_components/ui/discount-badge"
-import { CartContext } from "@/app/_providers/cart"
-import { ProductWithTotalPrice } from "@/app/helpers/product"
-import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react"
-import { useContext, useState } from "react"
+import { Button } from "@/app/_components/ui/button";
+import DiscountBadge from "@/app/_components/ui/discount-badge";
+import { CartContext } from "@/app/_providers/cart";
+import { ProductWithTotalPrice } from "@/app/helpers/product";
+import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
+import { useContext, useState } from "react";
 
 interface ProductInfoProps {
-  product: ProductWithTotalPrice
+  product: ProductWithTotalPrice;
 }
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
 
-  const { addProductToCart } = useContext(CartContext)
+  const { addProductToCart } = useContext(CartContext);
 
   const handleDecreaseQuantityClick = () => {
-    setQuantity((prev) => (prev == 1 ? prev : prev - 1))
-  }
+    setQuantity((prev) => (prev == 1 ? prev : prev - 1));
+  };
   const handleIncreaseQuantityClick = () => {
-    setQuantity((prev) => prev + 1)
-  }
+    setQuantity((prev) => prev + 1);
+  };
 
   const handleAddToCartClick = () => {
-    addProductToCart({ ...product, quantity })
-  }
+    addProductToCart({ ...product, quantity });
+  };
 
   return (
     <div className="flex flex-col px-5 lg:w-[40%] lg:rounded-lg lg:bg-accent lg:p-10">
@@ -100,7 +100,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         <p className="text-xs font-bold">Frete grátis </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductInfo
+export default ProductInfo;

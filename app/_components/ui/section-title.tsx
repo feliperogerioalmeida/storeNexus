@@ -1,5 +1,5 @@
-import { cn } from "@/app/_lib/utils"
-import { ComponentProps } from "react"
+import { cn } from "@/app/_lib/utils";
+import { ComponentProps } from "react";
 
 const SectionTitle = ({
   children,
@@ -11,7 +11,7 @@ const SectionTitle = ({
       {" "}
       {children}{" "}
     </p>
-  )
-}
+  );
+};
 
-export default SectionTitle
+export default SectionTitle;

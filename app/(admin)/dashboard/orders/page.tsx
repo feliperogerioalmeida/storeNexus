@@ -1,7 +1,7 @@
-import { Badge } from "@/app/_components/ui/badge"
-import OrderItem from "@/app/_components/ui/order-item"
-import { db } from "@/app/_lib/prisma"
-import { PackageSearchIcon } from "lucide-react"
+import { Badge } from "@/app/_components/ui/badge";
+import OrderItem from "@/app/_components/ui/order-item";
+import { db } from "@/app/_lib/prisma";
+import { PackageSearchIcon } from "lucide-react";
 
 const OrdersPage = async () => {
   const orders = await db.order.findMany({
@@ -12,7 +12,7 @@ const OrdersPage = async () => {
         },
       },
     },
-  })
+  });
 
   return (
     <div className="flex w-full flex-col gap-10 p-10">
@@ -33,7 +33,7 @@ const OrdersPage = async () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OrdersPage
+export default OrdersPage;

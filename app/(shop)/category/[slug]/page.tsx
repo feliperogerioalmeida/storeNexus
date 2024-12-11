@@ -4,6 +4,7 @@ import { db } from "@/app/_lib/prisma";
 import { CATEGORY_ICON } from "@/app/constants/category-icon";
 import { computeProductTotalPrice } from "@/app/helpers/product";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CategoryProducts = async ({ params }: any) => {
   const category = await db.category.findFirst({
     where: {

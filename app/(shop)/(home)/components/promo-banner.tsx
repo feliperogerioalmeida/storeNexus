@@ -1,5 +1,5 @@
-import { cn } from "@/app/_lib/utils"
-import Image, { ImageProps } from "next/image"
+import { cn } from "@/app/_lib/utils";
+import Image, { ImageProps } from "next/image";
 
 const PromoBanner = ({ alt, className, ...props }: ImageProps) => {
   return (
@@ -11,7 +11,7 @@ const PromoBanner = ({ alt, className, ...props }: ImageProps) => {
       alt={alt}
       {...props}
     />
-  )
-}
+  );
+};
 
-export default PromoBanner
+export default PromoBanner;

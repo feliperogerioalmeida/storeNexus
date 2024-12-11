@@ -1,9 +1,9 @@
-import Categories from "./components/categories"
-import { db } from "../../_lib/prisma"
-import ProductList from "../../_components/ui/product-list"
-import SectionTitle from "../../_components/ui/section-title"
-import PromoBanner from "./components/promo-banner"
-import Link from "next/link"
+import Categories from "./components/categories";
+import { db } from "../../_lib/prisma";
+import ProductList from "../../_components/ui/product-list";
+import SectionTitle from "../../_components/ui/section-title";
+import PromoBanner from "./components/promo-banner";
+import Link from "next/link";
 
 export default async function Home() {
   const deals = await db.product.findMany({
@@ -12,7 +12,7 @@ export default async function Home() {
         gt: 0,
       },
     },
-  })
+  });
 
   const keyboards = await db.product.findMany({
     where: {
@@ -20,7 +20,7 @@ export default async function Home() {
         slug: "keyboards",
       },
     },
-  })
+  });
 
   const mouses = await db.product.findMany({
     where: {
@@ -28,7 +28,7 @@ export default async function Home() {
         slug: "mouses",
       },
     },
-  })
+  });
 
   return (
     <>
@@ -53,6 +53,7 @@ export default async function Home() {
       </div>
 
       <div className="px-5 lg:mt-2">
+        {/* @ts-expect-error on this line */}
         <Categories />
       </div>
 
@@ -107,5 +108,5 @@ export default async function Home() {
         <ProductList products={mouses} />
       </div>
     </>
-  )
+  );
 }

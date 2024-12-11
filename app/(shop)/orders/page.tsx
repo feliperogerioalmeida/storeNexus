@@ -1,14 +1,14 @@
-import { getServerSession } from "next-auth"
-import { authOptions } from "../../_lib/auth"
-import { PackageSearchIcon } from "lucide-react"
-import { Badge } from "../../_components/ui/badge"
-import { db } from "../../_lib/prisma"
-import OrderItem from "../../_components/ui/order-item"
+import { getServerSession } from "next-auth";
+import { authOptions } from "../../_lib/auth";
+import { PackageSearchIcon } from "lucide-react";
+import { Badge } from "../../_components/ui/badge";
+import { db } from "../../_lib/prisma";
+import OrderItem from "../../_components/ui/order-item";
 
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";
 
 async function OrderPage() {
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions);
 
   if (!session || !session.user) {
     return (
@@ -16,7 +16,7 @@ async function OrderPage() {
         <h2 className="font-bold">Acesso Negado</h2>
         <p className="text-sm opacity-60">Faça o login para ver seus pedidos</p>
       </div>
-    )
+    );
   }
   const orders = await db.order.findMany({
     where: {
@@ -29,7 +29,7 @@ async function OrderPage() {
         },
       },
     },
-  })
+  });
 
   return (
     <div className="p-5 lg:container lg:mx-auto lg:py-10">
@@ -44,7 +44,7 @@ async function OrderPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default OrderPage
+export default OrderPage;

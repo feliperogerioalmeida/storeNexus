@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { Button } from "@/app/_components/ui/button"
+import { Button } from "@/app/_components/ui/button";
 import {
   LayoutDashboardIcon,
   ListOrderedIcon,
   PackageIcon,
   PackageSearchIcon,
-} from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+} from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
-  const path = usePathname()
+  const path = usePathname();
 
   return (
     <div className="flex min-w-[300px] flex-col items-center gap-8 border-r border-solid border-accent bg-background p-8">
@@ -56,7 +56,7 @@ const Sidebar = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

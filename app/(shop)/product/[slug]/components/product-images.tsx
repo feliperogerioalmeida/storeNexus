@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useState } from "react"
+import Image from "next/image";
+import { useState } from "react";
 
 interface ProductImagesProps {
-  name: string
-  imageUrls: string[]
+  name: string;
+  imageUrls: string[];
 }
 
 const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
-  const [currentImage, setCurrentImage] = useState(imageUrls[0])
+  const [currentImage, setCurrentImage] = useState(imageUrls[0]);
 
   const handleImageClick = (imageUrl: string) => {
-    setCurrentImage(imageUrl)
-  }
+    setCurrentImage(imageUrl);
+  };
 
   return (
     <div className="flex flex-col lg:min-h-full lg:w-3/5">
@@ -50,7 +50,7 @@ const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductImages
+export default ProductImages;

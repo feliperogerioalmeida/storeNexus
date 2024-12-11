@@ -22,8 +22,9 @@ export const POST = async (request: Request) => {
   );
 
   if (event.type == "checkout.session.completed") {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const session = event.data.object as any;
-
+    // eslint-disable-next-line no-unused-vars
     const sessionWithLineItems = await stripe.checkout.sessions.retrieve(
       event.data.object.id,
       {
@@ -31,7 +32,7 @@ export const POST = async (request: Request) => {
       },
     );
 
-    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const lineItems = sessionWithLineItems.line_items;
 
     //ATUALIZAR PEDIDO

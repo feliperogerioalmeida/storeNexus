@@ -1,10 +1,10 @@
-import { ShapesIcon } from "lucide-react"
-import { Badge } from "../../_components/ui/badge"
-import { db } from "../../_lib/prisma"
-import CategoryItem from "./components/category-item"
+import { ShapesIcon } from "lucide-react";
+import { Badge } from "../../_components/ui/badge";
+import { db } from "../../_lib/prisma";
+import CategoryItem from "./components/category-item";
 
 const CatalogPage = async () => {
-  const categories = await db.category.findMany({})
+  const categories = await db.category.findMany({});
 
   return (
     <div className="flex flex-col gap-8 p-5">
@@ -19,7 +19,7 @@ const CatalogPage = async () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CatalogPage
+export default CatalogPage;

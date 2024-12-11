@@ -1,7 +1,7 @@
-"use server"
+"use server";
 
-import { CartProduct } from "../_providers/cart"
-import Stripe from "stripe"
+import { CartProduct } from "../_providers/cart";
+import Stripe from "stripe";
 
 export const createCheckout = async (
   products: CartProduct[],
@@ -9,7 +9,7 @@ export const createCheckout = async (
 ) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
     apiVersion: "2024-11-20.acacia",
-  })
+  });
 
   const checkout = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
@@ -31,11 +31,11 @@ export const createCheckout = async (
           unit_amount: product.totalPrice * 100,
         },
         quantity: product.quantity,
-      }
+      };
     }),
-  })
+  });
 
   //RETORNAR CHECKOUT
 
-  return checkout
-}
+  return checkout;
+};

@@ -1,17 +1,17 @@
-import { computeProductTotalPrice } from "@/app/helpers/product"
-import { Prisma } from "@prisma/client"
-import Image from "next/image"
+import { computeProductTotalPrice } from "@/app/helpers/product";
+import { Prisma } from "@prisma/client";
+import Image from "next/image";
 
 interface OrderProductItemProps {
   orderProduct: Prisma.OrderProductGetPayload<{
     include: {
-      product: true
-    }
-  }>
+      product: true;
+    };
+  }>;
 }
 
 const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
-  const productTotalPrice = computeProductTotalPrice(orderProduct.product)
+  const productTotalPrice = computeProductTotalPrice(orderProduct.product);
 
   return (
     <div className="relative flex w-full items-center gap-4">
@@ -57,7 +57,7 @@ const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OrderProductItem
+export default OrderProductItem;

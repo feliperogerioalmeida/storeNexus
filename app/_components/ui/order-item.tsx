@@ -3,26 +3,26 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/app/_components/ui/accordion"
-import { Card } from "@/app/_components/ui/card"
-import { Prisma } from "@prisma/client"
-import { format } from "date-fns"
-import { Separator } from "@/app/_components/ui/separator"
-import { useMemo } from "react"
-import { computeProductTotalPrice } from "@/app/helpers/product"
-import { getOrderStatus } from "../../(shop)/orders/helpers/status"
-import OrderProductItem from "./order-product-item"
+} from "@/app/_components/ui/accordion";
+import { Card } from "@/app/_components/ui/card";
+import { Prisma } from "@prisma/client";
+import { format } from "date-fns";
+import { Separator } from "@/app/_components/ui/separator";
+import { useMemo } from "react";
+import { computeProductTotalPrice } from "@/app/helpers/product";
+import { getOrderStatus } from "../../(shop)/orders/helpers/status";
+import OrderProductItem from "./order-product-item";
 
 interface OrderItemProps {
   order: Prisma.OrderGetPayload<{
     include: {
       orderProducts: {
         include: {
-          product: true
-        }
-      }
-    }
-  }>
+          product: true;
+        };
+      };
+    };
+  }>;
 }
 
 const OrderItem = ({ order }: OrderItemProps) => {
@@ -30,18 +30,18 @@ const OrderItem = ({ order }: OrderItemProps) => {
     return order.orderProducts.reduce((acc, orderProduct) => {
       return (
         acc + Number(orderProduct.product.basePrice) * orderProduct.quantity
-      )
-    }, 0)
-  }, [order.orderProducts])
+      );
+    }, 0);
+  }, [order.orderProducts]);
 
   const total = useMemo(() => {
     return order.orderProducts.reduce((acc, orderProduct) => {
-      const productTotalPrice = computeProductTotalPrice(orderProduct.product)
-      return acc + productTotalPrice * orderProduct.quantity
-    }, 0)
-  }, [order.orderProducts])
+      const productTotalPrice = computeProductTotalPrice(orderProduct.product);
+      return acc + productTotalPrice * orderProduct.quantity;
+    }, 0);
+  }, [order.orderProducts]);
 
-  const totaldiscount = subtotal - total
+  const totaldiscount = subtotal - total;
 
   return (
     <Card className="px-5">
@@ -146,7 +146,7 @@ const OrderItem = ({ order }: OrderItemProps) => {
         </AccordionItem>
       </Accordion>
     </Card>
-  )
-}
+  );
+};
 
-export default OrderItem
+export default OrderItem;

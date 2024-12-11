@@ -1,8 +1,8 @@
-import { Badge } from "@/app/_components/ui/badge"
-import { Button } from "@/app/_components/ui/button"
-import { db } from "@/app/_lib/prisma"
-import { ListOrderedIcon, PlusIcon } from "lucide-react"
-import CategoriesTable from "./components/categories-table"
+import { Badge } from "@/app/_components/ui/badge";
+import { Button } from "@/app/_components/ui/button";
+import { db } from "@/app/_lib/prisma";
+import { ListOrderedIcon, PlusIcon } from "lucide-react";
+import CategoriesTable from "./components/categories-table";
 
 const CategoriesPage = async () => {
   const categories = await db.category.findMany({
@@ -13,7 +13,7 @@ const CategoriesPage = async () => {
         },
       },
     },
-  })
+  });
 
   return (
     <div className="flex w-full flex-col gap-10 p-10">
@@ -34,7 +34,7 @@ const CategoriesPage = async () => {
 
       <CategoriesTable categories={categories} />
     </div>
-  )
-}
+  );
+};
 
-export default CategoriesPage
+export default CategoriesPage;

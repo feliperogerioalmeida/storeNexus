@@ -1,14 +1,14 @@
-import { db } from "@/app/_lib/prisma"
-import ProductImages from "./components/product-images"
-import ProductInfo from "./components/product-info"
-import { computeProductTotalPrice } from "@/app/helpers/product"
-import ProductList from "@/app/_components/ui/product-list"
-import SectionTitle from "@/app/_components/ui/section-title"
+import { db } from "@/app/_lib/prisma";
+import ProductImages from "./components/product-images";
+import ProductInfo from "./components/product-info";
+import { computeProductTotalPrice } from "@/app/helpers/product";
+import ProductList from "@/app/_components/ui/product-list";
+import SectionTitle from "@/app/_components/ui/section-title";
 
 interface ProductDetailsPageProps {
   params: {
-    slug: string
-  }
+    slug: string;
+  };
 }
 
 const ProductDetailsPage = async ({
@@ -31,10 +31,10 @@ const ProductDetailsPage = async ({
         },
       },
     },
-  })
+  });
 
   if (!product) {
-    return null
+    return null;
   }
 
   return (
@@ -53,7 +53,7 @@ const ProductDetailsPage = async ({
         <ProductList products={product.category.products} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductDetailsPage
+export default ProductDetailsPage;

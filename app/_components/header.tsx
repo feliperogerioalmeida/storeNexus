@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Heart,
@@ -10,39 +10,39 @@ import {
   PackageSearchIcon,
   PercentIcon,
   ShoppingCartIcon,
-} from "lucide-react"
-import { Button } from "./ui/button"
-import { Card } from "./ui/card"
+} from "lucide-react";
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetHeader,
   SheetTrigger,
-} from "./ui/sheet"
-import { signIn, useSession, signOut } from "next-auth/react"
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
-import { Separator } from "./ui/separator"
-import Link from "next/link"
-import Cart from "./ui/cart"
-import { useContext } from "react"
-import { CartContext } from "../_providers/cart"
+} from "./ui/sheet";
+import { signIn, useSession, signOut } from "next-auth/react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Separator } from "./ui/separator";
+import Link from "next/link";
+import Cart from "./ui/cart";
+import { useContext } from "react";
+import { CartContext } from "../_providers/cart";
 
 const Header = () => {
-  const { data, status } = useSession()
+  const { data, status } = useSession();
 
-  const { products } = useContext(CartContext)
+  const { products } = useContext(CartContext);
 
   // Counting only products and not considering quantity
-  const cartQuantityItems = products.length
+  const cartQuantityItems = products.length;
 
   const handleLoginClick = async () => {
-    await signIn()
-  }
+    await signIn();
+  };
 
   const handleLogOutClick = async () => {
-    await signOut()
-  }
+    await signOut();
+  };
 
   return (
     <Card className="flex items-center justify-between p-[1.875rem]">
@@ -186,7 +186,7 @@ const Header = () => {
         </SheetContent>
       </Sheet>
     </Card>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

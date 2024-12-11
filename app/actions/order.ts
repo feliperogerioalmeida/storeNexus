@@ -1,7 +1,7 @@
-"use server"
+"use server";
 
-import { db } from "../_lib/prisma"
-import { CartProduct } from "../_providers/cart"
+import { db } from "../_lib/prisma";
+import { CartProduct } from "../_providers/cart";
 
 export const createOrder = async (
   cartProducts: CartProduct[],
@@ -22,7 +22,7 @@ export const createOrder = async (
         },
       },
     },
-  })
+  });
 
-  return order
-}
+  return order;
+};

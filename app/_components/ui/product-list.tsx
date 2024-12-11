@@ -1,9 +1,9 @@
-import ProductItem from "@/app/_components/ui/product-item"
-import { computeProductTotalPrice } from "@/app/helpers/product"
-import { Product } from "@prisma/client"
+import ProductItem from "@/app/_components/ui/product-item";
+import { computeProductTotalPrice } from "@/app/helpers/product";
+import { Product } from "@prisma/client";
 
 interface ProductListProps {
-  products: Product[]
+  products: Product[];
 }
 
 const ProductList = ({ products }: ProductListProps) => {
@@ -20,7 +20,7 @@ const ProductList = ({ products }: ProductListProps) => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;
