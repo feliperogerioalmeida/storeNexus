@@ -37,6 +37,8 @@ const WishListButton = ({ productId }: WishListButtonProps) => {
           },
         },
       );
+
+      setLoading(false);
       return;
     }
 
