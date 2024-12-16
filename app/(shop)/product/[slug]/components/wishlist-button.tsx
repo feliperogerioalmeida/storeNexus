@@ -5,12 +5,14 @@ import { useState } from "react";
 import { addProductToWishList } from "@/app/actions/Wishlist";
 import LoadingButton from "@/app/_components/ui/loading-button";
 import { StarIcon } from "lucide-react";
+import { WishList } from "@prisma/client";
 
 interface WishListButtonProps {
   productId: string;
+  wishLists: WishList[];
 }
 
-const WishListButton = ({ productId }: WishListButtonProps) => {
+const WishListButton = ({ productId, wishLists }: WishListButtonProps) => {
   const { data: session } = useSession();
 
   const router = useRouter();
@@ -44,9 +46,11 @@ const WishListButton = ({ productId }: WishListButtonProps) => {
 
     await addProductToWishList(session.user.id, productId);
 
+    router.refresh();
+
     toast("Produto adicionado aos favoritos", {
       action: {
-        label: "Ver Favoritos",
+        label: "Ver favoritos",
         onClick: () => {
           router.push("/wishlist");
         },
@@ -63,7 +67,9 @@ const WishListButton = ({ productId }: WishListButtonProps) => {
       className="uppercase"
       onClick={handleAddToWishList}
     >
-      <StarIcon />
+      <StarIcon
+        className={`h-5 w-5 ${wishLists?.length > 0 ? "fill-white" : ""}`}
+      />
       Favoritos
     </LoadingButton>
   );

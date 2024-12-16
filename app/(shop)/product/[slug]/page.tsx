@@ -30,6 +30,7 @@ const ProductDetailsPage = async ({
           },
         },
       },
+      wishLists: true,
     },
   });
 

@@ -7,9 +7,14 @@ import { ProductWithTotalPrice } from "@/app/helpers/product";
 import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
 import { useContext, useState } from "react";
 import WishListButton from "./wishlist-button";
+import { WishList } from "@prisma/client";
+
+interface ProductWithTotalPriceAndWishLists extends ProductWithTotalPrice {
+  wishLists: WishList[];
+}
 
 interface ProductInfoProps {
-  product: ProductWithTotalPrice;
+  product: ProductWithTotalPriceAndWishLists;
 }
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
@@ -78,7 +83,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
       </div>
 
       <div className="mt-8 flex flex-col gap-5">
-        <WishListButton productId={product.id} />
+        <WishListButton productId={product.id} wishLists={product.wishLists} />
 
         <Button
           className="mt-8 font-bold uppercase"
