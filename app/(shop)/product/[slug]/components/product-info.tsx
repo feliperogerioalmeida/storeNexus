@@ -100,7 +100,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
               <p className="text-xs">
                 Entrega via <span className="font-bold">OrbiPacket®</span>
               </p>
-              <p className="text-xs text-[#8162FF]">
+              <p className="text-xs text-[#2D9FC2]">
                 Envio para <span className="font-bold">todo Brasil</span>
               </p>
             </div>

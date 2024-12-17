@@ -66,7 +66,7 @@ const OrderItem = ({ order }: OrderItemProps) => {
 
               <div className="hidden flex-1 font-bold lg:block">
                 <p className="text-xs lg:text-sm">Status</p>
-                <p className="text-xs text-[#8162FF] lg:text-sm">
+                <p className="text-xs text-[#2D9FC2] lg:text-sm">
                   {getOrderStatus(order.status)}
                 </p>
               </div>
@@ -90,7 +90,7 @@ const OrderItem = ({ order }: OrderItemProps) => {
               <div className="flex items-center justify-between lg:hidden">
                 <div className="font-bold">
                   <p className="text-xs lg:text-sm">Status</p>
-                  <p className="text-xs text-[#8162FF] lg:text-sm">
+                  <p className="text-xs text-[#2D9FC2] lg:text-sm">
                     {getOrderStatus(order.status)}
                   </p>
                 </div>

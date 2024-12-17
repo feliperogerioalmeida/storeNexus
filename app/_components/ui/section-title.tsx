@@ -7,7 +7,10 @@ const SectionTitle = ({
   ...props
 }: ComponentProps<"p">) => {
   return (
-    <p className={cn("mb-3 pl-5 font-bold uppercase", className)} {...props}>
+    <p
+      className={cn("mt-2 font-bold uppercase lg:text-xl", className)}
+      {...props}
+    >
       {" "}
       {children}{" "}
     </p>
