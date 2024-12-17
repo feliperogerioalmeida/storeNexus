@@ -164,7 +164,7 @@ const Header = () => {
       </Sheet>
 
       <Link href="/">
-        <h1 className="text-lg font-semibold">
+        <h1 className="text-lg font-semibold lg:text-2xl">
           <span className="text-primary"> Orbi </span> Store
         </h1>
       </Link>
