@@ -98,7 +98,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
             <div className="flex flex-col">
               <p className="text-xs">
-                Entrega via <span className="font-bold">OrbiPacket®</span>
+                Entrega via <span className="font-bold">NexusPacket®</span>
               </p>
               <p className="text-xs text-[#2D9FC2]">
                 Envio para <span className="font-bold">todo Brasil</span>

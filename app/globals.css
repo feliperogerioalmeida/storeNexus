@@ -26,22 +26,22 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    
-    --primary: 185, 48%, 36%;
+
+    --primary: 168, 59%, 48%;
     --primary-foreground: 210 40% 98%;
-    
+
     --secondary: 199, 93%, 22%%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
@@ -51,7 +51,7 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-   
+
     --radius: 0.5rem;
   }
   .dark {
@@ -64,7 +64,7 @@
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 185, 48%, 36%;
+    --primary: 168, 59%, 48%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 199, 93%, 22%;
@@ -92,36 +92,22 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground h-full;
+    @apply h-full bg-background text-foreground;
   }
-  html{
+  html {
     @apply h-full;
   }
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0.45rem;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: #171717;
 }
 
-::-webkit-scrollbar-thumb{
-  background: #5033c3;
+::-webkit-scrollbar-thumb {
+  background: #33c3a5;
   border-radius: 999px;
 }
-
-/* Cores Orbi
-
-#044D6E
-hsl(199, 93%, 22%)
-
-
-#308088
-hsl(185, 48%, 36%)
-
-#9CDFC9
-hsl(160, 51%, 74%)
-
-*/

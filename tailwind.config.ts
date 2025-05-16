@@ -14,7 +14,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "category-item-gradient":
-          "linear-gradient(45deg, #2D9FC2 0%, rgba(45, 159, 194, 0.20) 100%);",
+          "linear-gradient(90deg, #33C3A5 0%, rgba(51, 195, 165, 0.40) 100%);",
       },
       borderRadius: {
         lg: "var(--radius)",
