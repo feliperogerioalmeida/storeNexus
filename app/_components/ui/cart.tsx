@@ -8,7 +8,7 @@ import { Separator } from "./separator";
 import { ScrollArea } from "./scroll-area";
 import { Button } from "./button";
 import { loadStripe } from "@stripe/stripe-js";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { createOrder } from "@/app/actions/order";
 import { createCheckout } from "@/app/actions/checkout";
 
@@ -18,7 +18,7 @@ const Cart = () => {
 
   const handleFinishPurchaseClick = async () => {
     if (!data?.user) {
-      // TODO: redirecionar para o login
+      await signIn();
       return;
     }
 
