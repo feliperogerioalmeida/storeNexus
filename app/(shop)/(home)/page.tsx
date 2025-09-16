@@ -53,7 +53,6 @@ export default async function Home() {
       </div>
 
       <div className="px-5 lg:mt-2">
-        {/* @ts-expect-error on this line */}
         <Categories />
       </div>
 
